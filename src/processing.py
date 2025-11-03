@@ -11,3 +11,17 @@ def filter_by_state(operations: list, state: str = 'EXECUTED') -> list:
 
     return result
 
+
+def sort_by_date(operations: list, reverse: bool = True) -> list:
+    """
+    Сортирует список операций по дате operations: список словарей с операциями
+    reverse: если True (по умолчанию) - сортировка по убыванию,
+    если False - по возрастанию
+    Returns: Отсортированный список операций
+    """
+
+    return sorted(
+        operations,
+        key=lambda x: x['date'],
+        reverse=reverse
+    )
